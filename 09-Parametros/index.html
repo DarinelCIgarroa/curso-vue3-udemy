@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticiones Multiples</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/axios@0.24.0/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <h1>Buscar Posts</h1>
+        <form @submit.prevent="getpost">
+            <label> Buscar Post</label>
+            <p><input v-model="postId" type="number" max="100" placeholder="Ingresa el número del post"></p>
+            <input type="submit" value="Buscar">
+        </form>
+
+        <div class="post">
+            <h2 v-if="post.length === 0 ">No hay busquedas realizadas</h2>
+            <div v-else class="public-post">
+                <h2>Titulo del post: <span style="color: red;">{{ post.title }}</span></h2>
+                <h3>Creado por: <span style="color: lime;">{{ user.name }}</span></h3>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+
+</html>

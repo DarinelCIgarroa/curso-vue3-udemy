@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <!-- Modificar color de la batta de estados en Andorid -->
+    <meta name="theme-color>" content="#41b833">
+    <!-- Optimizacion del Seo -->
+    <meta name="MobileOptimized" content="width" >
+    <meta name="HandheldFriendly" content="true">
+    <!-- Modificar la barra de IOS -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="./img/number64.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/number64.png">
+    <link rel="apple-touch-startup-image" href="./img/number64.png">
+    <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+    <div id="app" class="app">
+        <h1 class="title">{{ title }}</h1>
+        <hr>
+            <h2 class="count">{{ count }}</h2>
+        <hr>
+        <div class="content-button">
+            <button @click="Modcount('add')" class="button button1">+1</button>
+            <button @click="Modcount('removeOne')" class="button button2">-1</button>
+        </div>
+    </div>
+    <script src="./load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+</html>

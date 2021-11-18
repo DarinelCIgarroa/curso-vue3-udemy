@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api - axios</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        .title h2{
+            font-size: 20px;
+        }
+        .user-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .container {
+            height: 250px;
+            width: 250px;
+            border: 1px dashed black;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 style="text-align: center;">{{ title }}</h1>
+        <div class="user-container">
+            <div class="container" v-for="user in users" :key="user.id">
+                <div class="title">
+                    <h2>{{ user.name }}</h2>
+                </div>
+                <ul>
+                    <li>Email: {{ user.email }}</li>
+                    <li>City: {{ user.address.city }}</li>
+                    <li>Phone: {{ user.phone }}</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+
+</html>

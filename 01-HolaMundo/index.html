@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Hola mundo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="user.age <= 0 || user.age >= 100" class="fuera_rango">Estas fuera del rango, verifica tu edad</h1>
+        <h1 v-else-if="user.age >= 18" class="name">Bienvenido: {{ user.name }}</h1>
+        <h1 v-else class="error">Eres menor de edad</h1>
+        <h2>Peliculas:</h2>
+        <ul>
+            <li v-for="(movie, indice) in user.movies" :key="indice">{{ movie }}</li>
+        </ul>
+        <!-- <h1 :class=" user.age >= 18 ? user.classValue = 'name' : user.classValue = 'error' ">{{ user.name }}</h1>
+        <h2>{{ user.age }}</h2>
+        <h2>{{ user.message }}</h2>
+        <img :src="user.image" alt="Perro" width="350" height="250"> -->
+    </div>
+</body>
+
+<script>
+    const mounApp = app.mount('#app'); 
+</script>
+</html>

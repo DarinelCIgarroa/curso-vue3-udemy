@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculaddora Vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <p>Número 1: <input v-model.number="num1" type="number" placeholder="Pirmer Número"></p>
+        <p>Número 2: <input v-model.number="num2" type="number" placeholder="Segundo Número"></p>
+
+        <h3>La suma es: {{ suma }}</h3>
+        <h3>La resta es: {{ resta }}</h3>
+        <h3>La multiplicacion es: {{ multiplicacion }}</h3>
+        <h3>La division es: {{ division }}</h3>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+</html>

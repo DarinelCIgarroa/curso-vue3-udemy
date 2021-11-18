@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - VueJS</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        input {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ title }}</h1>
+        <form @submit.prevent="enviar()">
+            <input v-model.trim="datos.name" type="text" placeholder="Ingresa tu nombre">
+            <p>
+                <input v-model.number="datos.age" type="number" placeholder="Ingresa un numero" min="18" max="100">
+            </p>
+            <p>
+            <h2>Lenguajes Favoritos</h2>
+            <input v-model="datos.langs" type="checkbox" id="js" value="JavaScript">
+            <label for="js">JavaScript</label>
+            <input v-model="datos.langs" type="checkbox" id="php" value="PHP">
+            <label for="php">PHP</label>
+            <input v-model="datos.langs" type="checkbox" id="NodeJS" value="NodeJS">
+            <label for="NodeJS">NodeJS</label>
+            </p>
+            <h2>Genero</h2>
+            <input v-model="datos.genere" type="radio" name="hombre" id="hombre" value="hombre">
+            <label for="hombre">Hombre</label>
+            <input v-model="datos.genere" type="radio" name="Mujer" id="mujer" value="mujer">
+            <label for="mujer">Mujer</label>
+            <p>    
+                <input type="submit" value="Enviar">
+            </p>
+        </form>
+        <pre>{{ datos }}</pre>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js"></script>
+</body>
+
+</html>
